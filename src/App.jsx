@@ -25,7 +25,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route element={<RootLayouts />}>
-          <Route path="/landing" element={<Landing />} />
+          <Route path="/" element={<Landing />} />
           <Route path="/tours" element={<Tours />} />
           <Route path="/tours/:id" element={<SingleTour />} />
           <Route path="/bookings" element={<Bookings/>} />
