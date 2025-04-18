@@ -1,6 +1,8 @@
 import React from "react";
 import RecentlyviewedCard from "../../Components/RecentlyviewedCard";
 import ReommendCard from "../../Components/ReommendCard";
+import ChooseCard from "../../Components/ChooseCard";
+import AttractionCard from "../../Components/AttractionCard";
 
 const Landing = () => {
   return (
@@ -13,15 +15,6 @@ const Landing = () => {
         }}
       >
         <div className="absolute inset-0 bg-black/40"></div>
-
-        <header className="absolute top-0 left-0 w-full flex items-center justify-between p-6 z-10">
-          <h1 className="text-white text-2xl font-bold">Tour Guide</h1>
-          <nav className="space-x-6 text-white font-medium">
-            <a href="#">Wishlist</a>
-            <a href="#">Cart</a>
-            <a href="#">Bookings</a>
-          </nav>
-        </header>
 
         <div className="relative z-10 text-white px-8 pt-40 max-w-3xl">
           <h2 className="text-4xl md:text-5xl font-bold leading-tight">
@@ -37,41 +30,66 @@ const Landing = () => {
         </div>
       </div>
 
-      <section>
-        <h1 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">
-          Recently viewed
-        </h1>
+      <ChooseCard/>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-4">
-          {[1, 2, 3, 4].map((card, index) => {
-            return <RecentlyviewedCard key={index} />;
-          })}
+      <section className=" bg-[#F7F7F7]">
+        <div className="mx-[7%]">
+          <h2 className="text-3xl font-bold text-gray-800 mb-2 text-center pt-10">
+            Popular Locations
+          </h2>
+          <p className="text-gray-500 text-sm mb-2 text-center">
+            Explore your desire places
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-4">
+            {[1, 2, 3, 4].map((card, index) => {
+              return <RecentlyviewedCard key={index} />;
+            })}
+          </div>
         </div>
       </section>
 
-      <section>
-        <div >
-        <h1 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">
-        You might like these
-        </h1>
+      <section className="bg-[#ebf9f7] py-16 text-center mt-3">
+      <h2 className="text-3xl font-bold mb-4">Keep things<br />flexible</h2>
+      <p className="max-w-xl mx-auto text-gray-700 text-base">
+        Use Reserve Now &amp; Pay Later to secure the activities you don't want to miss without being locked in.
+      </p>
+    </section>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-4">
-        {
-          [1,2,3,4,].map((recommend, index)=>{
-            return(
-              <ReommendCard
-              key={index}
-              
-              />
-            )
-          })
-        }
+      <section className="bg-white">
+        <div className="mx-[7%]">
+          <h2 className="text-3xl font-bold text-gray-800 mb-2 text-center pt-10">
+            Popular Locations
+          </h2>
+          <p className="text-gray-500 text-sm mb-2 text-center">
+            Explore your desire places
+          </p>
 
-        </div>
-        
-
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-4">
+            {[1, 2, 3, 4].map((recommend, index) => {
+              return <ReommendCard key={index} />;
+            })}
+          </div>
         </div>
       </section>
+
+
+      <section className="bg-[#F7F7F7] px-4 sm:px-6 lg:px-[9%] py-6">
+  <div className="max-w-6xl mx-auto font-sans">
+    <h1 className="text-2xl sm:text-3xl font-bold text-center mb-6">Top attractions in Ghana</h1>
+
+    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+      <AttractionCard />
+      <AttractionCard />
+      <AttractionCard />
+      <AttractionCard />
+      <AttractionCard />
+      <AttractionCard />
+    </div>
+  </div>
+</section>
+
+     
     </div>
   );
 };

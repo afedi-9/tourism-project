@@ -3,7 +3,8 @@ import React from 'react'
 const ReommendCard = () => {
   return (
     <div>
-        <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+        <div>
+  <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
     <div className="relative">
       <img
         src="https://images.unsplash.com/photo-1506744038136-46273834b3fb"
@@ -24,11 +25,18 @@ const ReommendCard = () => {
             6.86-8.55 11.54L12 21.35z" />
         </svg>
       </button>
+
+      {/* User Profile Image */}
+      <img
+        src="https://randomuser.me/api/portraits/men/32.jpg"
+        alt="User"
+        className="w-10 h-10 rounded-full border-2 border-white absolute bottom-2 right-2 shadow-md"
+      />
     </div>
 
     <div className="p-4 space-y-2">
       <h3 className="text-lg font-semibold text-gray-800 leading-snug">
-        Experience the Beauty, History and the Culture Of Accra in a Day
+        Experience the Beauty
       </h3>
 
       <div className="flex items-center gap-2 text-sm text-gray-600">
@@ -54,6 +62,7 @@ const ReommendCard = () => {
       </div>
     </div>
   </div>
+</div>
     </div>
   )
 }
