@@ -1,5 +1,6 @@
 import { Search, User } from 'lucide-react'
 import React from 'react'
+import { Link } from 'react-router'
 
 const Navbar = () => {
   return (
@@ -31,8 +32,10 @@ const Navbar = () => {
           
           {/* Dropdown menu */}
           <div className="absolute right-0 mt-2 w-40 bg-white text-black rounded shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 z-50">
-            <a href="/login" className="block px-4 py-2 text-sm hover:bg-gray-100">Login</a>
-            <a href="/signup" className="block px-4 py-2 text-sm hover:bg-gray-100">Sign Up</a>
+            <Link to={'/login'} className="block px-4 py-2 text-sm hover:bg-gray-100">Login </Link>
+            <Link to={'/signup'} className="block px-4 py-2 text-sm hover:bg-gray-100">Sign Up </Link>
+            
+          
           </div>
         </div>
       </div>
