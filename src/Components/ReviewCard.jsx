@@ -4,6 +4,7 @@ import { Link } from 'react-router'
 const ReviewCard = () => {
   return (
     <div className="w-full">
+        
       <div className="w-full mx-auto p-4 bg-white shadow-sm rounded-lg">
         {/* Disclaimer */}
         <div className="text-gray-600 text-sm mb-8">

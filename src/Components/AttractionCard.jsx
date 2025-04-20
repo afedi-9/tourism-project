@@ -1,11 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 const AttractionCard = () => {
   return (
     <div>
-        
-      {/* Just one card in the grid */}
-      <div className="flex gap-3 items-center sm:gap-4 md:gap-5 lg:gap-6">
+        <section>
+        <Link to={`/tours/:id`}>
+        <div className="flex gap-3 items-center sm:gap-4 md:gap-5 lg:gap-6">
   <img
     src="https://images.unsplash.com/photo-1506744038136-46273834b3fb"
     alt="Attraction"
@@ -16,6 +17,11 @@ const AttractionCard = () => {
     <p className="text-xs text-gray-600 sm:text-sm md:text-base">Tours and Activities</p>
   </div>
 </div>
+        </Link>
+
+
+        </section>
+      
 
     
     </div>
