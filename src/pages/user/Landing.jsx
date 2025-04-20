@@ -1,36 +1,71 @@
-import React from "react";
+import React, { useState } from "react";
 import RecentlyviewedCard from "../../Components/RecentlyviewedCard";
 import ReommendCard from "../../Components/ReommendCard";
 import ChooseCard from "../../Components/ChooseCard";
 import AttractionCard from "../../Components/AttractionCard";
+import { Calendar, Search } from "lucide-react";
+import DatePicker from "react-datepicker";
 
 const Landing = () => {
+  const [startDate, setStartDate] = useState(null);
   return (
     <div>
       <div
-        className="relative h-screen bg-cover bg-center"
+        className="relative h-[80vh] bg-cover bg-center"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1506744038136-46273834b3fb')",
-        }}
-      >
-        <div className="absolute inset-0 bg-black/40"></div>
-
-        <div className="relative z-10 text-white px-8 pt-40 max-w-3xl">
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-            Travel memories
-            <br /> you'll never forget
-          </h2>
-          <p className="mt-4 text-lg">
-            Goreme Hot Air Balloon Flight at Sunrise
+        }} >
+      
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 text-white px-4 pt-32 sm:pt-36 max-w-5xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-5xl font-bold mb-2">Hi Michael!</h2>
+          <p className="text-lg sm:text-xl mb-6">
+            Plan better with 300,000+ travel experiences.
           </p>
-          <button className="mt-6 px-6 py-3 bg-white text-black font-semibold rounded-md hover:bg-gray-200">
-            Learn More
-          </button>
+
+          {/* Search Box */}
+          <div className="bg-white rounded-2xl shadow-lg px-4 py-4 sm:py-3 flex flex-col md:flex-row items-stretch md:items-center gap-4 w-full max-w-4xl mx-auto">
+  {/* Where to */}
+  <div className="flex-1 flex flex-col md:border-r md:pr-4">
+    <label className="text-sm font-semibold text-gray-800 mb-1">
+      Where to?
+    </label>
+    <input
+      type="text"
+      placeholder="Search for a place or activity"
+      className="w-full outline-none bg-transparent text-sm text-gray-700 placeholder:text-gray-400"
+    />
+  </div>
+
+  {/* When */}
+  <div className="flex-1 flex flex-col md:pl-4">
+    <label className="text-sm font-semibold text-gray-800 mb-1">
+      When
+    </label>
+    <div className="flex items-center gap-2">
+      <Calendar className="text-gray-500" size={18} />
+      <DatePicker
+        selected={startDate}
+        onChange={(date) => setStartDate(date)}
+        placeholderText="Select Dates"
+        className="w-full outline-none bg-transparent text-sm text-gray-700"
+      />
+    </div>
+  </div>
+
+  {/* Search Button */}
+  <div className="flex justify-center md:justify-end">
+    <button className="bg-green-600 hover:bg-green-700 text-white p-3 rounded-full flex items-center justify-center w-full md:w-auto">
+      <Search size={18} />
+    </button>
+  </div>
+</div>
+
         </div>
       </div>
 
-      <ChooseCard/>
+      <ChooseCard />
 
       <section className=" bg-[#F7F7F7]">
         <div className="mx-[7%]">
@@ -50,11 +85,16 @@ const Landing = () => {
       </section>
 
       <section className="bg-[#ebf9f7] py-16 text-center mt-3">
-      <h2 className="text-3xl font-bold mb-4">Keep things<br />flexible</h2>
-      <p className="max-w-xl mx-auto text-gray-700 text-base">
-        Use Reserve Now &amp; Pay Later to secure the activities you don't want to miss without being locked in.
-      </p>
-    </section>
+        <h2 className="text-3xl font-bold mb-4">
+          Keep things
+          <br />
+          flexible
+        </h2>
+        <p className="max-w-xl mx-auto text-gray-700 text-base">
+          Use Reserve Now &amp; Pay Later to secure the activities you don't
+          want to miss without being locked in.
+        </p>
+      </section>
 
       <section className="bg-white">
         <div className="mx-[7%]">
@@ -73,23 +113,29 @@ const Landing = () => {
         </div>
       </section>
 
-
       <section className="bg-[#F7F7F7] px-4 sm:px-6 lg:px-[9%] py-6">
-  <div className="max-w-6xl mx-auto font-sans">
-    <h1 className="text-2xl sm:text-3xl font-bold text-center mb-6">Top attractions in Ghana</h1>
+        <div className="max-w-6xl mx-auto font-sans">
+          <h1 className="text-2xl sm:text-3xl font-bold text-center mb-6">
+            Top attractions in Ghana
+          </h1>
 
-    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
-      <AttractionCard />
-      <AttractionCard />
-      <AttractionCard />
-      <AttractionCard />
-      <AttractionCard />
-      <AttractionCard />
-    </div>
-  </div>
-</section>
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+            {
+              [1,2,3,4,5,6].map((at, index)=>{
+                return(
+                  <AttractionCard
+                  key={index}
+                  
+                  />
 
-     
+                )
+              })
+            }
+           
+          
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
