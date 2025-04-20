@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import AttractionCard from "../../Components/AttractionCard";
+import ReommendCard from "../../Components/ReommendCard";
+import ReviewCard from "../../Components/ReviewCard";
 
 const SingleTour = () => {
   const [startDate, setStartDate] = useState(new Date("2025-05-21"));
@@ -349,82 +352,10 @@ const SingleTour = () => {
             </section>
 
             {/* Second tab navigation */}
-            <div className="border-t border-b border-gray-300 py-1">
-              <nav className="flex overflow-x-auto space-x-8">
-                <a
-                  href="#overview"
-                  className="border-b-2 border-black px-1 py-4 text-sm font-medium"
-                >
-                  Overview
-                </a>
-                <a
-                  href="#details"
-                  className="text-gray-500 hover:text-gray-700 px-1 py-4 text-sm font-medium"
-                >
-                  Details
-                </a>
-                <a
-                  href="#itinerary"
-                  className="text-gray-500 hover:text-gray-700 px-1 py-4 text-sm font-medium"
-                >
-                  Itinerary
-                </a>
-                <a
-                  href="#operator"
-                  className="text-gray-500 hover:text-gray-700 px-1 py-4 text-sm font-medium"
-                >
-                  Operator
-                </a>
-                <a
-                  href="#reviews"
-                  className="text-gray-500 hover:text-gray-700 px-1 py-4 text-sm font-medium"
-                >
-                  Reviews
-                </a>
-              </nav>
-            </div>
+            
 
             {/* Accordion sections */}
-            <div className="space-y-4">
-              <div className="border-b border-gray-200 pb-4">
-                <button className="flex justify-between items-center w-full text-left">
-                  <h3 className="text-lg font-medium">What's included</h3>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <div className="border-b border-gray-200 pb-4">
-                <button className="flex justify-between items-center w-full text-left">
-                  <h3 className="text-lg font-medium">What to expect</h3>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
+          
           </div>
 
           {/* Right column - Booking */}
@@ -546,6 +477,27 @@ const SingleTour = () => {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="bg-white">
+        <div className="mx-[7%]">
+          <h2 className="text-3xl font-bold text-gray-800 mb-2 text-center pt-10">
+          Explore our promoted experiences
+          </h2>
+          <p className="text-gray-500 text-sm mb-2 text-center">
+            Explore your desire places
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-4">
+            {[1, 2, 3, 4].map((recommend, index) => {
+              return <ReommendCard key={index} />;
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <ReviewCard/>
       </section>
     </div>
   );
