@@ -4,9 +4,10 @@ import { Link } from 'react-router';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-[#2f2e41] text-white px-6 py-4 z-50 shadow-md">
+    <nav className="fixed top-0 left-0 w-full bg-[#ffffff] text-black px-6 py-4 z-50 shadow-md">
       <div className="flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center space-x-2">
@@ -17,12 +18,16 @@ export default function Navbar() {
         {/* Desktop Links */}
         <ul className="hidden md:flex space-x-8 font-semibold text-sm">
           <Link to={'/'}className="hover:text-orange-400 cursor-pointer">Home</Link>
+          <Link to={'/destinations'}className="hover:text-orange-400 cursor-pointer">Destinations</Link>
+          <Link to={'/tours'}className="hover:text-orange-400 cursor-pointer">Tours</Link>
+          <Link to={'/contact'}className="hover:text-orange-400 cursor-pointer">Contact</Link>
+          <Link to={'/about'}className="hover:text-orange-400 cursor-pointer">About</Link>
           
-          <li className="hover:text-orange-400 cursor-pointer">Destinations</li>
-          <li className="hover:text-orange-400 cursor-pointer">Tours</li>
-          <li className="hover:text-orange-400 cursor-pointer">Pages</li>
+       
+        
+          
           <li className="hover:text-orange-400 cursor-pointer">News</li>
-          <li className="hover:text-orange-400 cursor-pointer">Contact</li>
+    
         </ul>
 
         {/* Icons & Hamburger */}
@@ -39,28 +44,26 @@ export default function Navbar() {
           </div>
 
           {/* Hamburger for mobile */}
-          <button
-            className="md:hidden focus:outline-none"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-      </div>
+<button className="md:hidden focus:outline-none" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+  {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+</button>
+</div>
+</div>
 
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <ul className="md:hidden mt-4 space-y-4 font-semibold text-sm">
-          <li className="hover:text-orange-400 cursor-pointer">Home</li>
-          <li className="hover:text-orange-400 cursor-pointer">Destinations</li>
-          <li className="hover:text-orange-400 cursor-pointer">Tours</li>
-          <li className="hover:text-orange-400 cursor-pointer">Pages</li>
-          <li className="hover:text-orange-400 cursor-pointer">News</li>
-          <li className="hover:text-orange-400 cursor-pointer">Contact</li>
-          <Link to="/login" className="hover:text-orange-400 block">Login</Link>
-          <Link to="/signup" className="hover:text-orange-400 block">Sign Up</Link>
-        </ul>
-      )}
+{/* Mobile Menu */}
+{isMobileMenuOpen && (
+  <div className="md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg z-50 px-4 py-2">
+    <ul className="flex flex-col space-y-4 font-semibold text-sm">
+      <li><Link to='/' className="hover:text-orange-400 block py-2">Home</Link></li>
+      <li><Link to='/destinations' className="hover:text-orange-400 block py-2">Destinations</Link></li>
+      <li><Link to='/tours' className="hover:text-orange-400 block py-2">Tours</Link></li>
+      <li><Link to='/contact' className="hover:text-orange-400 block py-2">Contact</Link></li>
+      <li><Link to='/about' className="hover:text-orange-400 block py-2">About</Link></li>
+      <li><Link to="/login" className="hover:text-orange-400 block py-2">Login</Link></li>
+      <li><Link to="/signup" className="hover:text-orange-400 block py-2">Sign Up</Link></li>
+    </ul>
+  </div>
+)}
     </nav>
   );
 }

@@ -21,6 +21,9 @@ import UpdateTour from "./pages/tourOperator/UpdateTour";
 import ManageBookings from "./pages/tourOperator/ManageBookings";
 import Signup from "./pages/auth/Signup";
 import Login from "./pages/auth/Login";
+import Dextinations from "./pages/user/Dextinations";
+import Contact from "./pages/user/Contact";
+import About from "./pages/user/About";
 
 function App() {
   return (
@@ -30,9 +33,11 @@ function App() {
         <Route element={<RootLayouts />}>
           <Route path="/" element={<Landing />} />
           <Route path="/tours" element={<Tours />} />
+          <Route path="/destinations" element={<Dextinations/>}/>
           <Route path="/tours/:id" element={<SingleTour />} />
           <Route path="/bookings" element={<Bookings />} />
-          <Route path="/messaging" element={<Messaging />} />
+          <Route path="/about" element={<About/>} />
+          <Route path="/contact" element={<Contact/>}/>
           <Route path="/review" element={<Review />} />
           <Route path="/profile" element={<Profile />} />
         </Route>
