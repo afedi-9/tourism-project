@@ -1,3 +1,4 @@
+import { MapPin } from "lucide-react";
 import React from "react";
 import { Link } from "react-router";
 
@@ -39,6 +40,10 @@ const ReommendCard = () => {
           </div>
 
           <div className="p-4 space-y-2">
+          <div className="flex items-center mb-2">
+                <MapPin className="h-4 w-4 text-teal-600 mr-1" />
+                <span className="text-sm text-gray-600">Accra, Ghana</span>
+              </div>
             <h3 className="text-lg font-semibold text-gray-800 leading-snug">
               Experience the Beauty
             </h3>
