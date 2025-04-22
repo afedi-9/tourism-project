@@ -7,7 +7,7 @@ import RootLayouts from "./layouts/RootLayouts";
 
 import Tours from "./pages/user/Tours";
 import SingleTour from "./pages/user/SingleTour";
-import Messaging from "./pages/user/Messaging";
+
 import Review from "./pages/user/Review";
 import Profile from "./pages/user/Profile";
 import Bookings from "./pages/user/Bookings";
@@ -24,6 +24,9 @@ import Login from "./pages/auth/Login";
 import Dextinations from "./pages/user/Dextinations";
 import Contact from "./pages/user/Contact";
 import About from "./pages/user/About";
+import OperatorSignup from "./pages/auth/OperatorSignup";
+import OperatourLogin from "./pages/auth/OperatourLogin";
+
 
 function App() {
   return (
@@ -40,9 +43,13 @@ function App() {
           <Route path="/contact" element={<Contact/>}/>
           <Route path="/review" element={<Review />} />
           <Route path="/profile" element={<Profile />} />
+          
         </Route>
         <Route path = "/login" element={<Login/>}/>
         <Route path="/signup" element={<Signup/>} />
+        <Route path="/operatour-signup" element={<OperatorSignup/>} />
+        <Route path="/operatour-login" element={<OperatourLogin/>} />
+        
 
         
         

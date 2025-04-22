@@ -1,65 +1,106 @@
-import React from 'react'
-import { Link } from 'react-router'
+import React from "react";
+import { Link } from "react-router";
 
 const Login = () => {
   return (
     <div>
-      <div>
-      <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
-  <div className="max-w-md w-full bg-white p-8 rounded-lg shadow-lg">
-    <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">Login to Your Account</h2>
+      <div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md w-full space-y-8 bg-white p-8 rounded-lg shadow-md">
+          <div>
+            <h2 class="text-center text-3xl font-extrabold text-gray-900">
+              Tourist Login
+            </h2>
+            <p class="mt-2 text-center text-sm text-gray-600">
+              Sign in to your account
+            </p>
+          </div>
 
-    <form className="space-y-4">
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-          Email Address
-        </label>
-        <input
-          type="email"
-          id="email"
-          className="mt-1 w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
-          placeholder="you@example.com"
-        />
+          <form class="mt-8 space-y-6">
+            <div class="rounded-md shadow-sm space-y-4">
+              <div>
+                <label
+                  for="login-email"
+                  class="block text-sm font-medium text-gray-700"
+                >
+                  Email Address
+                </label>
+                <input
+                  id="login-email"
+                  name="email"
+                  type="email"
+                  class="mt-1 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  placeholder="john@example.com"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="login-password"
+                  class="block text-sm font-medium text-gray-700"
+                >
+                  Password
+                </label>
+                <input
+                  id="login-password"
+                  name="password"
+                  type="password"
+                  class="mt-1 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  placeholder="••••••••"
+                />
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <div class="flex items-center">
+                <input
+                  id="remember-me"
+                  name="remember-me"
+                  type="checkbox"
+                  class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                />
+                <label
+                  for="remember-me"
+                  class="ml-2 block text-sm text-gray-900"
+                >
+                  Remember me
+                </label>
+              </div>
+
+              <div class="text-sm">
+                <a
+                  href="#"
+                  class="font-medium text-blue-600 hover:text-blue-500"
+                >
+                  Forgot your password?
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <button
+                type="submit"
+                class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              >
+                Sign in
+              </button>
+            </div>
+
+            <div class="text-sm text-center">
+              <p class="text-gray-600">
+                Don't have an account?
+                <Link
+                  to={"/signup"}
+                  className="text-blue-500 hover: text-blue-600 underline"
+                >
+                  Register
+                </Link>
+              </p>
+            </div>
+          </form>
+        </div>
       </div>
-
-      <div>
-        <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-          Password
-        </label>
-        <input
-          type="password"
-          id="password"
-          className="mt-1 w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
-          placeholder="••••••••"
-        />
-      </div>
-
-      <div className="flex items-center justify-between text-sm">
-        <label className="flex items-center gap-2">
-          <input type="checkbox" className="form-checkbox text-orange-500" />
-          Remember me
-        </label>
-        <a href="#" className="text-orange-500 hover:underline">Forgot password?</a>
-      </div>
-
-      <button
-        type="submit"
-        className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded transition duration-200"
-      >
-        Login
-      </button>
-
-      <p className="text-center text-sm text-gray-600 mt-4">
-        Don’t have an account? <Link to={'/signup'} className="text-orange-500 hover:underline">Sign up
-        </Link> 
-      </p>
-    </form>
-  </div>
-</div>
-
     </div>
-    </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

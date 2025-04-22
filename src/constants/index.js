@@ -7,11 +7,11 @@ export default{
             path: "/dashboard",
             icon: Home
         },
-        {
-            name: "Create Tour",
-            path: "/dashboard/create-tour",
-            icon: BookAIcon,
-        },
+        // {
+        //     name: "Create Tour",
+        //     path: "/dashboard/create-tour",
+        //     icon: BookAIcon,
+        // },
         {
             name: "Vendor Ads",
             path: "/dashboard/tours",
