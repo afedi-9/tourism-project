@@ -1,7 +1,28 @@
 import React from 'react'
-import { Link } from 'react-router'
+import { Link, useNavigate } from 'react-router'
+import { apiOperatorSignup } from '../../services/auth'
 
 const OperatorSignup = () => {
+
+  const navigate = useNavigate() //for navigation
+  const handleSubmit = async (event) => {
+    // prevent default submit bahaviour
+    event.preventDefault();
+    // show loading indicator
+    // collect form data
+    const data = new FormData(event.target)
+    // post to backend
+    try {
+      const response = await apiOperatorSignup(data);
+      console.log(response)
+      navigate('/operatour-login');
+
+    } catch (error) {
+      console.log(error);
+    }finally{
+      // Hide loading indicator
+    }
+  }
   return (
     <div>
         {/* <!-- Tour Operator Registration Form --> */}
@@ -16,7 +37,7 @@ const OperatorSignup = () => {
       </p>
     </div>
     
-    <form class="mt-8 space-y-6">
+    <form onSubmit={handleSubmit} class="mt-8 space-y-6">
       <div class="rounded-md shadow-sm space-y-4">
         {/* <!-- Business Information Section --> */}
         <div class="mb-4">
