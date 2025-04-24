@@ -7,7 +7,7 @@ export const apiSignup = (payload) => {
   });
 };
 export const apiLogin = async (payload) => {
-  apiClient.post("/api/users/login", payload, {
+  return apiClient.post("/api/users/login", payload, {
     headers: {
       "Content-Type": "application/json",
       Authorization: localStorage.getItem("token"),
@@ -23,7 +23,7 @@ export const apiOperatorSignup = (payload) => {
   });
 };
 export const apiOperatorLogin = async (payload) => {
-  apiClient.post("/api/users/login", payload, {
+  return apiClient.post("/api/users/login", payload, {
     headers: {
       "Content-Type": "application/json",
     },
