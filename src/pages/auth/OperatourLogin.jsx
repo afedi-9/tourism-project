@@ -10,12 +10,12 @@ const OperatourLogin = () => {
     const formData = new FormData(event.target);
     try {
       const res = await apiOperatorLogin(formData)
-      const role =res.data.role; //grabing the role from the backend
-      localStorage.setItem('token', res.data.accessToken); //saving the role inside the localstorage
+      const role = res.data.user.userType; //grabing the role
+      localStorage.setItem("token", res.data.token);//saving the role inside the localstorage
       localStorage.setItem('role',role); //saving the role inside the local storage
 
       // logic htmlFor nagivating roles
-      if(role=== "operator"){
+      if(role=== "tour_operator"){
         navigate('/dashboard');
       }
 

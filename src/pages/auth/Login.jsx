@@ -10,14 +10,15 @@ const Login = () => {
     const formData = new FormData(event.target);
     try {
       const res = await apiLogin(formData);
-      const role = res.data.role; //grabing the role
-      localStorage.setItem("token", res.data.accessToken);
+      const role = res.data.user.userType; //grabing the role
+      console.log(role);
+      localStorage.setItem("token", res.data.token);
       localStorage.setItem("role", role);
 
       console.log(res);
 
       //htmlFor navigating roles
-      if (role === "user") {
+      if (role === "tourist") {
         navigate("/tours");
       }
     } catch (error) {
