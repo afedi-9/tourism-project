@@ -24,7 +24,7 @@ export default{
         },
         {
             name: "Update Tour",
-            path: "/dashboard/update",
+            path: "/dashboard/update/:id",
             icon: Pencil,
         },
         {

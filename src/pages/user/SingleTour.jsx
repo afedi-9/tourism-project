@@ -1,15 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import AttractionCard from "../../Components/AttractionCard";
 import ReommendCard from "../../Components/ReommendCard";
 import ReviewCard from "../../Components/ReviewCard";
 import Footer from "../../Components/Footer";
-import { Link } from "react-router";
+import { Link, useParams } from "react-router";
+import { apiGetSingleTour } from "../../services/tours";
 
 const SingleTour = () => {
   const [startDate, setStartDate] = useState(new Date("2025-05-21"));
   const [travelers, setTravelers] = useState(2); // default to 2 adults
+
+  const { id } = useParams();
+
+  const [ad, setAd] = useState({});
+
+  const getAd = async () => {
+    try {
+      const response = await apiGetSingleTour(id);
+      setAd(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getAd();
+  }, []);
 
   return (
     <div>
@@ -237,7 +255,7 @@ const SingleTour = () => {
           <h2 className="text-3xl font-bold text-gray-800 mb-2 text-center pt-10">Explore our promoted experiences</h2>
           <p className="text-gray-500 text-sm mb-2 text-center">Explore your desired places</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-4">
-            {[1, 2, 3, 4].map((_, index) => <ReommendCard key={index} />)}
+            {/* { ads.map((ad) => <ReommendCard key={ad.id}  ad={ad}/>)} */}
           </div>
         </div>
       </section>

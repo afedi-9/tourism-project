@@ -19,7 +19,7 @@ const Login = () => {
 
       //htmlFor navigating roles
       if (role === "tourist") {
-        navigate("/tours");
+        navigate("/");
       }
     } catch (error) {
       console.log(error);

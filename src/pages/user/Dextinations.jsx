@@ -305,38 +305,37 @@ const Dextinations = () => {
                         fill
                       />
                     </div>
-                    <div className="p-6 lg:p-8">
-                      <div className="flex items-center mb-2">
-                        <MapPin className="h-4 w-4 text-teal-600 mr-1" />
-                        <span className="text-sm text-gray-600">
-                          Central Region, Ghana
-                        </span>
-                      </div>
-                      <h3 className="text-2xl font-bold mb-3">
-                        Cape Coast Castle
-                      </h3>
-                      <p className="text-gray-600 mb-4">
-                        Cape Coast Castle is one of about forty "slave castles"
-                        built on the Gold Coast of West Africa by European
-                        traders. It was originally built by the Swedes for trade
-                        in timber and gold, but later used in the trans-Atlantic
-                        slave trade.
-                      </p>
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        <span className="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">
-                          Historical
-                        </span>
-                        <span className="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">
-                          UNESCO Site
-                        </span>
-                        <span className="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">
-                          Cultural
-                        </span>
-                      </div>
-                      <button className="bg-teal-600 hover:bg-teal-700">
-                        Explore Tours
-                      </button>
-                    </div>
+                    
+                    <div className="p-6 lg:p-8 bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300">
+  <div className="flex items-center mb-3">
+    <MapPin className="h-5 w-5 text-teal-600 mr-2" />
+    <span className="text-sm text-gray-700 font-medium">
+      Central Region, Ghana
+    </span>
+  </div>
+  <h3 className="text-2xl font-bold text-slate-800 mb-3">
+    Cape Coast Castle
+  </h3>
+  <p className="text-gray-600 mb-5 leading-relaxed">
+    Cape Coast Castle is one of about forty "slave castles" built on the Gold Coast of West Africa by European traders. 
+    It was originally built by the Swedes for trade in timber and gold, but later used in the trans-Atlantic slave trade.
+  </p>
+  <div className="flex flex-wrap gap-2 mb-6">
+    <span className="bg-teal-100 text-teal-800 text-xs font-semibold px-3 py-1 rounded-full">
+      Historical
+    </span>
+    <span className="bg-amber-100 text-amber-800 text-xs font-semibold px-3 py-1 rounded-full">
+      UNESCO Site
+    </span>
+    <span className="bg-indigo-100 text-indigo-800 text-xs font-semibold px-3 py-1 rounded-full">
+      Cultural
+    </span>
+  </div>
+  <button className="w-full py-2.5 px-4 bg-gradient-to-r from-teal-500 to-teal-600 text-white font-medium text-sm rounded-lg shadow hover:shadow-md hover:from-teal-600 hover:to-teal-700 transition-all duration-300">
+    Explore Tours
+  </button>
+</div>
+
                   </div>
                 </div>
               </div>

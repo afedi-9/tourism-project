@@ -58,7 +58,7 @@ function App() {
           <Route path="create-tour" element={<CreateTour/>} />
           <Route path="tours" element={<VendorAds />} />
           <Route path="bookings" element ={<ManageBookings/>}/>
-          <Route path="update" element ={<UpdateTour/>}/>
+          <Route path="update/:id" element ={<UpdateTour/>}/>
           <Route path="Operator-profile" element={<OperatorProfile />} />
           <Route path="message" element={<Message />} />
           

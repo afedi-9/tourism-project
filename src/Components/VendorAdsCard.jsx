@@ -1,6 +1,6 @@
 import React from 'react'
 
-const VendorAdsCard = () => {
+const VendorAdsCard = ({ad}) => {
   return (
     <div className="">
   <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
@@ -27,8 +27,8 @@ const VendorAdsCard = () => {
     </div>
 
     <div className="p-4 space-y-2">
-      <h3 className="text-lg font-semibold text-gray-800 leading-snug">
-        Experience the Beauty, History and the Culture Of Accra in a Day
+      <h3 className="text-lg font-semibold text-gray-800 leading-snug">{ad.title}
+       
       </h3>
 
       <div className="flex items-center gap-2 text-sm text-gray-600">
@@ -50,7 +50,7 @@ const VendorAdsCard = () => {
       <div className="text-sm text-gray-600">Private and Luxury</div>
 
       <div className="text-base font-semibold text-gray-800 pt-1">
-        from <span className="text-black">$80.00</span> per adult
+        from <span className="text-black">{ad.rateCard}</span> 
       </div>
     </div>
   </div>
