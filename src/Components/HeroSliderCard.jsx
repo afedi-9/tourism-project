@@ -11,7 +11,7 @@ import aburiImage from "../assets/images/aburi.png"
 const HeroSliderCard = () => {
     const slides = [
         {
-          image: kakumImage,
+          image: kwameImage,
           title: "Discover Ghana's Beauty",
           description:
             "Explore the rich culture, stunning landscapes, and unforgettable experiences across Ghana.",
