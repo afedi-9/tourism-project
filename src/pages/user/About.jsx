@@ -11,6 +11,7 @@ import React from "react";
 import TestimoniyCard from "../../Components/TestimoniyCard";
 import Footer from "../../Components/Footer";
 
+
 const About = () => {
   return (
     <div className="min-h-screen flex flex-col">
@@ -162,7 +163,7 @@ const About = () => {
           <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
             <div class="h-60 bg-gray-200">
               <img
-                src="/api/placeholder/300/300"
+                src=""
                 alt="Efua Asare"
                 class="w-full h-full object-cover"
               />

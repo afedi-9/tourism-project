@@ -43,11 +43,9 @@ export default function Navbar() {
               Experiences
             </Link>
             <Link to="/about" className="text-sm font-medium hover:text-teal-500 transition-colors">
-              About Ghana
+              About 
             </Link>
-            <Link to="/travel-guide" className="text-sm font-medium hover:text-teal-500 transition-colors">
-              Travel Guide
-            </Link>
+            
             <Link to="/contact" className="text-sm font-medium hover:text-teal-500 transition-colors">
               Contact
             </Link>
@@ -126,7 +124,7 @@ export default function Navbar() {
               Experiences
             </Link>
             <Link to="/about" className="text-sm font-medium hover:text-teal-500 transition-colors">
-              About Ghana
+              About 
             </Link>
             <Link to="/travel-guide" className="text-sm font-medium hover:text-teal-500 transition-colors">
               Travel Guide
