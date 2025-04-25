@@ -1,6 +1,7 @@
 import {  FacebookIcon, Instagram,  X, Youtube } from 'lucide-react'
 import React from 'react'
 import { Link } from 'react-router'
+import WanderNestLogoCard from './WanderNestLogoCard'
 
 const Footer = () => {
   return (
@@ -9,7 +10,14 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">GhanaTravel</h3>
+            <h3 className="text-xl font-bold mb-4">
+            <Link to="/" className="flex items-center gap-2">
+              <WanderNestLogoCard className="h-8 w-8" />
+              <span className="text-xl font-bold text-slate-700">
+                Wander<span className="text-teal-500">Nest</span>
+              </span>
+            </Link>
+            </h3>
             <p className="text-slate-300 mb-4">
               Discover the beauty and culture of Ghana with our expertly curated travel experiences.
             </p>

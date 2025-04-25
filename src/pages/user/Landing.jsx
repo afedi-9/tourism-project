@@ -3,7 +3,7 @@ import RecentlyviewedCard from "../../Components/RecentlyviewedCard";
 import ReommendCard from "../../Components/ReommendCard";
 import ChooseCard from "../../Components/ChooseCard";
 import AttractionCard from "../../Components/AttractionCard";
-import { ChevronRight, MapPin, Star, Users } from "lucide-react";
+
 
 import Footer from "../../Components/Footer";
 import HeroSliderCard from "../../Components/HeroSliderCard";

@@ -1,32 +1,38 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react'; // or any icon lib you're using
+import kakumImage from "../assets/images/kakum.png";
+import kwameImage from "../assets/images/kwameNkruma.png"
+import moleImage from "../assets/images/mole.png"
+import aburiImage from "../assets/images/aburi.png"
+
+
 
 
 const HeroSliderCard = () => {
     const slides = [
         {
-          image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+          image: kakumImage,
           title: "Discover Ghana's Beauty",
           description:
             "Explore the rich culture, stunning landscapes, and unforgettable experiences across Ghana.",
           subtext: "Plan better with 300,000+ travel experiences.",
         },
         {
-          image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+          image: kwameImage,
           title: "Experience Cape Coast",
           description:
             "Visit historic castles, pristine beaches, and immerse yourself in the vibrant coastal culture.",
           subtext: "Guided tours available year-round.",
         },
         {
-          image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+          image: moleImage,
           title: "Adventure in Kakum National Park",
           description:
             "Walk among the treetops on the famous canopy walkway and discover Ghana's incredible wildlife.",
           subtext: "Eco-tourism at its finest.",
         },
         {
-          image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+          image: aburiImage,
           title: "Explore Accra's Vibrant Markets",
           description:
             "Dive into the colors, sounds, and flavors of Ghana's bustling capital city.",
@@ -90,7 +96,7 @@ const HeroSliderCard = () => {
                   </h1>
                   <p className="text-xl text-white/90 mb-8">{slide.description}</p>
                   <p className="text-white/80 mb-8">{slide.subtext}</p>
-                  <button className="bg-[#CE1126] hover:bg-[#CE1126]/90 text-white px-6 py-3 rounded-md font-medium flex items-center">
+                  <button className="bg-[#009689] hover:bg-[#009689]/90 text-white px-6 py-3 rounded-md font-medium flex items-center">
                     Explore Destinations <ChevronRight className="ml-2 h-4 w-4" />
                   </button>
                 </div>
