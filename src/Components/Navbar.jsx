@@ -1,212 +1,168 @@
-import { useState } from 'react';
-import { Search, User, Menu, X } from 'lucide-react'; // Or any icons you use
-import { Link } from 'react-router';
+import { useState } from "react";
+import { Search, User, Menu, X } from "lucide-react";
+import { Link } from "react-router";
+import WanderNestLogoCard from "./WanderNestLogoCard";
 
 export default function Navbar() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [showLoginOptions, setShowLoginOptions] = useState(false)
-  const [showSignupOptions, setShowSignupOptions] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showLoginOptions, setShowLoginOptions] = useState(false);
+  const [showSignupOptions, setShowSignupOptions] = useState(false);
 
-  const handleMouseEnter = (optionType) => {
-    if (optionType === "login") {
-      setShowLoginOptions(true)
-      setShowSignupOptions(false)
-    } else if (optionType === "signup") {
-      setShowSignupOptions(true)
-      setShowLoginOptions(false)
-    }
-  }
+  const handleMouseEnter = (type) => {
+    setShowLoginOptions(type === "login");
+    setShowSignupOptions(type === "signup");
+  };
+
+  const handleMouseLeave = () => {
+    setShowLoginOptions(false);
+    setShowSignupOptions(false);
+  };
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-[#ffffff] text-black px-6 py-4 z-50 shadow-md">
-      <div className="flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center space-x-2">
-          <img src="/logo.png" alt="Tevily Logo" className="w-6 h-6" />
-          <span className="text-xl font-bold">LOGO HERE</span>
-        </div>
+    <header className="bg-white/95 backdrop-blur-sm sticky top-0 z-50 border-b">
+      <div className="container mx-auto px-4">
+        <div className="flex h-16 items-center justify-between">
+          <div className="flex items-center">
+            <Link to="/" className="flex items-center gap-2">
+              <WanderNestLogoCard className="h-8 w-8" />
+              <span className="text-xl font-bold text-slate-700">
+                Wander<span className="text-teal-500">Nest</span>
+              </span>
+            </Link>
+          </div>
 
-        {/* Desktop Links */}
-        <ul className="hidden md:flex space-x-8 font-semibold text-sm">
-          <li>
-            <Link to="/" className="hover:text-orange-400 cursor-pointer">
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-8">
+            <Link to="/" className="text-sm font-medium hover:text-teal-500 transition-colors">
               Home
             </Link>
-          </li>
-          <li>
-            <Link to="/destinations" className="hover:text-orange-400 cursor-pointer">
+            <Link to="/destinations" className="text-sm font-medium hover:text-teal-500 transition-colors">
               Destinations
             </Link>
-          </li>
-          <li>
-            <Link to="/tours" className="hover:text-orange-400 cursor-pointer">
-              Tours
+            <Link to="/tours" className="text-sm font-medium hover:text-teal-500 transition-colors">
+              Experiences
             </Link>
-          </li>
-          <li>
-            <Link to="/contact" className="hover:text-orange-400 cursor-pointer">
+            <Link to="/about" className="text-sm font-medium hover:text-teal-500 transition-colors">
+              About Ghana
+            </Link>
+            <Link to="/travel-guide" className="text-sm font-medium hover:text-teal-500 transition-colors">
+              Travel Guide
+            </Link>
+            <Link to="/contact" className="text-sm font-medium hover:text-teal-500 transition-colors">
               Contact
             </Link>
-          </li>
-          <li>
-            <Link to="/about" className="hover:text-orange-400 cursor-pointer">
-              About
-            </Link>
-          </li>
-          <li className="hover:text-orange-400 cursor-pointer">News</li>
-        </ul>
+          </nav>
 
-        {/* Icons & Hamburger */}
-        <div className="flex items-center space-x-4">
-          <Search className="hidden md:block cursor-pointer hover:text-orange-400" />
-
-          <div className="relative group hidden md:block">
-            <User className="cursor-pointer hover:text-orange-400" />
-
-            {/* Updated Dropdown with Multi-step Selection */}
-            <div className="absolute right-0 mt-2 w-64 bg-white text-black rounded shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 z-50">
-              {/* Main Options */}
-              <div className="px-4 py-3 border-b border-gray-100">
-                <div
-                  className="flex items-center justify-between cursor-pointer hover:bg-gray-50 p-2 rounded"
-                  onMouseEnter={() => handleMouseEnter("login")}
-                >
-                  <span>Login</span>
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-
-                <div
-                  className="flex items-center justify-between cursor-pointer hover:bg-gray-50 p-2 rounded mt-1"
-                  onMouseEnter={() => handleMouseEnter("signup")}
-                >
-                  <span>Sign Up</span>
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </div>
-
-              {/* Login Role Options (Sub-menu) */}
+          <div className="hidden md:flex items-center space-x-4 relative group" onMouseLeave={handleMouseLeave}>
+            <div
+              className="text-sm font-medium px-3 py-2 rounded-md hover:bg-slate-100 cursor-pointer"
+              onMouseEnter={() => handleMouseEnter("login")}
+            >
+              Sign In
               {showLoginOptions && (
-                <div className="px-4 py-3 bg-gray-50">
-                  <h4 className="text-xs font-semibold text-gray-500 mb-2">SELECT ROLE TO LOGIN</h4>
-                  <Link to="/login" className="block py-2 px-2 text-sm hover:bg-gray-100 rounded text-blue-600">
-                    Tourist
-                  </Link>
-                  <Link
-                    to="/operatour-login"
-                    className="block py-2 px-2 text-sm hover:bg-gray-100 rounded text-green-600"
-                  >
-                    Tour Operator
-                  </Link>
-                  <span className="block py-2 px-2 text-sm hover:bg-gray-100 rounded text-purple-600 opacity-50">
-                    Admin
-                  </span>
+                <div className="absolute top-10 right-0 w-48 bg-white text-black rounded shadow-lg z-50">
+                  <div className="px-4 py-3 bg-gray-50">
+                    <h4 className="text-xs font-semibold text-gray-500 mb-2">LOGIN AS</h4>
+                    <Link to="/login" className="block py-2 px-2 text-sm hover:bg-gray-100 rounded text-blue-600">
+                      Tourist
+                    </Link>
+                    <Link to="/operatour-login" className="block py-2 px-2 text-sm hover:bg-gray-100 rounded text-green-600">
+                      Tour Operator
+                    </Link>
+                    <span className="block py-2 px-2 text-sm hover:bg-gray-100 rounded text-purple-600 opacity-50">
+                      Admin
+                    </span>
+                  </div>
                 </div>
               )}
+            </div>
 
-              {/* Sign Up Role Options (Sub-menu) */}
+            <div
+              className="text-sm font-medium bg-teal-500 hover:bg-teal-600 text-white px-3 py-2 rounded-md cursor-pointer"
+              onMouseEnter={() => handleMouseEnter("signup")}
+            >
+              Sign Up
               {showSignupOptions && (
-                <div className="px-4 py-3 bg-gray-50">
-                  <h4 className="text-xs font-semibold text-gray-500 mb-2">SELECT ROLE TO SIGN UP</h4>
-                  <Link to="/signup" className="block py-2 px-2 text-sm hover:bg-gray-100 rounded text-blue-600">
-                    Tourist
-                  </Link>
-                  <Link
-                    to="/operatour-signup"
-                    className="block py-2 px-2 text-sm hover:bg-gray-100 rounded text-green-600"
-                  >
-                    Tour Operator
-                  </Link>
-                  <span className="block py-2 px-2 text-sm hover:bg-gray-100 rounded text-purple-600 opacity-50">
-                    Admin
-                  </span>
+                <div className="absolute top-10 right-0 w-48 bg-white text-black rounded shadow-lg z-50">
+                  <div className="px-4 py-3 bg-gray-50">
+                    <h4 className="text-xs font-semibold text-gray-500 mb-2">SIGN UP AS</h4>
+                    <Link to="/signup" className="block py-2 px-2 text-sm hover:bg-gray-100 rounded text-blue-600">
+                      Tourist
+                    </Link>
+                    <Link to="/operatour-signup" className="block py-2 px-2 text-sm hover:bg-gray-100 rounded text-green-600">
+                      Tour Operator
+                    </Link>
+                    <span className="block py-2 px-2 text-sm hover:bg-gray-100 rounded text-purple-600 opacity-50">
+                      Admin
+                    </span>
+                  </div>
                 </div>
               )}
             </div>
           </div>
 
-          {/* Hamburger for mobile */}
-          <button className="md:hidden focus:outline-none" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu with Role-based Options */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg z-50 px-4 py-2">
-          <ul className="flex flex-col space-y-4 font-semibold text-sm">
-            <li>
-              <Link to="/" className="hover:text-orange-400 block py-2">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to="/destinations" className="hover:text-orange-400 block py-2">
-                Destinations
-              </Link>
-            </li>
-            <li>
-              <Link to="/tours" className="hover:text-orange-400 block py-2">
-                Tours
-              </Link>
-            </li>
-            <li>
-              <Link to="/contact" className="hover:text-orange-400 block py-2">
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link to="/about" className="hover:text-orange-400 block py-2">
-                About
-              </Link>
-            </li>
+      {/* Mobile Navigation */}
+      {isMenuOpen && (
+        <div className="md:hidden py-4 px-4 bg-white border-t">
+          <nav className="flex flex-col space-y-4">
+            <Link to="/" className="text-sm font-medium hover:text-teal-500 transition-colors">
+              Home
+            </Link>
+            <Link to="/destinations" className="text-sm font-medium hover:text-teal-500 transition-colors">
+              Destinations
+            </Link>
+            <Link to="/tours" className="text-sm font-medium hover:text-teal-500 transition-colors">
+              Experiences
+            </Link>
+            <Link to="/about" className="text-sm font-medium hover:text-teal-500 transition-colors">
+              About Ghana
+            </Link>
+            <Link to="/travel-guide" className="text-sm font-medium hover:text-teal-500 transition-colors">
+              Travel Guide
+            </Link>
+            <Link to="/contact" className="text-sm font-medium hover:text-teal-500 transition-colors">
+              Contact
+            </Link>
 
-            {/* Login Section */}
-            <li className="py-2">
-              <div className="font-bold">Login as:</div>
-              <ul className="ml-4 mt-2 space-y-2">
-                <li>
-                  <Link to="/login" className="hover:text-blue-600 block py-1">
-                    Tourist
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/operatour-login" className="hover:text-green-600 block py-1">
-                    Tour Operator
-                  </Link>
-                </li>
-                <li>
-                  <span className="hover:text-purple-600 block py-1 opacity-50">Admin</span>
-                </li>
-              </ul>
-            </li>
+            <div className="pt-4">
+              <h4 className="text-xs font-semibold text-gray-500 mb-2">LOGIN AS</h4>
+              <Link to="/login" className="block py-2 px-2 text-sm hover:bg-gray-100 rounded text-blue-600">
+                Tourist
+              </Link>
+              <Link to="/operatour-login" className="block py-2 px-2 text-sm hover:bg-gray-100 rounded text-green-600">
+                Tour Operator
+              </Link>
+              <span className="block py-2 px-2 text-sm hover:bg-gray-100 rounded text-purple-600 opacity-50">
+                Admin
+              </span>
+            </div>
 
-            {/* Sign Up Section */}
-            <li className="py-2">
-              <div className="font-bold">Sign Up as:</div>
-              <ul className="ml-4 mt-2 space-y-2">
-                <li>
-                  <Link to="/signup" className="hover:text-blue-600 block py-1">
-                    Tourist
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/operatour-signup" className="hover:text-green-600 block py-1">
-                    Tour Operator
-                  </Link>
-                </li>
-                <li>
-                  <span className="hover:text-purple-600 block py-1 opacity-50">Admin</span>
-                </li>
-              </ul>
-            </li>
-          </ul>
+            <div className="pt-4">
+              <h4 className="text-xs font-semibold text-gray-500 mb-2">SIGN UP AS</h4>
+              <Link to="/signup" className="block py-2 px-2 text-sm hover:bg-gray-100 rounded text-blue-600">
+                Tourist
+              </Link>
+              <Link to="/operatour-signup" className="block py-2 px-2 text-sm hover:bg-gray-100 rounded text-green-600">
+                Tour Operator
+              </Link>
+              <span className="block py-2 px-2 text-sm hover:bg-gray-100 rounded text-purple-600 opacity-50">
+                Admin
+              </span>
+            </div>
+          </nav>
         </div>
       )}
-    </nav>
+    </header>
   );
 }

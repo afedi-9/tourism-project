@@ -2,7 +2,7 @@ import { MapPin } from "lucide-react";
 import React from "react";
 import { Link } from "react-router";
 
-const ReommendCard = () => {
+const ReommendCard = (ad) => {
   return (
     <div>
       <Link to={`/tours/:id`}>

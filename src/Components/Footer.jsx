@@ -1,128 +1,125 @@
-import { Facebook, Instagram, Landmark, Link, Linkedin, Mail, MapPin, Phone, X } from 'lucide-react'
+import {  FacebookIcon, Instagram,  X, Youtube } from 'lucide-react'
 import React from 'react'
+import { Link } from 'react-router'
 
 const Footer = () => {
   return (
-    <div>
-      {/* Footer - New Addition */}
-      <footer className="bg-gray-800 text-white pt-12 pb-6">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-            {/* Company Info */}
-            <div>
-              <div className="flex items-center mb-4">
-                <Landmark className="h-6 w-6 text-teal-400 mr-2" />
-                <span className="font-bold text-lg">TravelGhana</span>
-              </div>
-              <p className="text-gray-400 mb-4">
-                Discover the beauty and culture of Ghana with our curated travel experiences.
-              </p>
-              <div className="flex space-x-4">
-                <Link href="#" className="text-gray-400 hover:text-white">
-                  <Facebook className="h-5 w-5" />
-                </Link>
-                <Link href="#" className="text-gray-400 hover:text-white">
-                  <X className="h-5 w-5" />
-                </Link>
-                <Link href="#" className="text-gray-400 hover:text-white">
-                  <Instagram className="h-5 w-5" />
-                </Link>
-                <Link href="#" className="text-gray-400 hover:text-white">
-                  <Linkedin className="h-5 w-5" />
-                </Link>
-              </div>
-            </div>
 
-            {/* Quick Links */}
-            <div>
-              <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link href="#" className="text-gray-400 hover:text-white">
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-gray-400 hover:text-white">
-                    Destinations
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-gray-400 hover:text-white">
-                    Tours & Activities
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-gray-400 hover:text-white">
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-gray-400 hover:text-white">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Support */}
-            <div>
-              <h3 className="font-semibold text-lg mb-4">Support</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link href="#" className="text-gray-400 hover:text-white">
-                    FAQs
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-gray-400 hover:text-white">
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-gray-400 hover:text-white">
-                    Terms of Service
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-gray-400 hover:text-white">
-                    Refund Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-gray-400 hover:text-white">
-                    Customer Support
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Contact */}
-            <div>
-              <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <MapPin className="h-5 w-5 text-teal-400 mr-2 mt-0.5" />
-                  <span className="text-gray-400">123 Tourism Road, Accra, Ghana</span>
-                </li>
-                <li className="flex items-center">
-                  <Phone className="h-5 w-5 text-teal-400 mr-2" />
-                  <span className="text-gray-400">+233 123 456 789</span>
-                </li>
-                <li className="flex items-center">
-                  <Mail className="h-5 w-5 text-teal-400 mr-2" />
-                  <span className="text-gray-400">info@travelghana.com</span>
-                </li>
-              </ul>
+    <footer className="bg-slate-900 text-white">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div>
+            <h3 className="text-xl font-bold mb-4">GhanaTravel</h3>
+            <p className="text-slate-300 mb-4">
+              Discover the beauty and culture of Ghana with our expertly curated travel experiences.
+            </p>
+            <div className="flex space-x-4">
+              <Link href="#" className="text-slate-300 hover:text-white transition-colors">
+                <FacebookIcon className="h-5 w-5" />
+                <span className="sr-only">Facebook</span>
+              </Link>
+              <Link href="#" className="text-slate-300 hover:text-white transition-colors">
+                <X className="h-5 w-5" />
+                <span className="sr-only">Twitter</span>
+              </Link>
+              <Link href="#" className="text-slate-300 hover:text-white transition-colors">
+                <Instagram className="h-5 w-5" />
+                <span className="sr-only">Instagram</span>
+              </Link>
+              <Link href="#" className="text-slate-300 hover:text-white transition-colors">
+                <Youtube className="h-5 w-5" />
+                <span className="sr-only">YouTube</span>
+              </Link>
             </div>
           </div>
 
-          <div className="border-t border-gray-700 pt-6 mt-6 text-center text-gray-400 text-sm">
-            <p>&copy; {new Date().getFullYear()} TravelGhana. All rights reserved.</p>
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Destinations</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="#" className="text-slate-300 hover:text-white transition-colors">
+                  Accra
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="text-slate-300 hover:text-white transition-colors">
+                  Cape Coast
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="text-slate-300 hover:text-white transition-colors">
+                  Kumasi
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="text-slate-300 hover:text-white transition-colors">
+                  Tamale
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="text-slate-300 hover:text-white transition-colors">
+                  Volta Region
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="#" className="text-slate-300 hover:text-white transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="text-slate-300 hover:text-white transition-colors">
+                  Travel Guide
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="text-slate-300 hover:text-white transition-colors">
+                  FAQs
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="text-slate-300 hover:text-white transition-colors">
+                  Terms & Conditions
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="text-slate-300 hover:text-white transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+            <address className="not-italic text-slate-300 space-y-2">
+              <p>123 Tourism Road</p>
+              <p>Accra, Ghana</p>
+              <p className="mt-4">
+                <a href="tel:+233123456789" className="hover:text-white transition-colors">
+                  +233 12 345 6789
+                </a>
+              </p>
+              <p>
+                <a href="mailto:info@ghanatravel.com" className="hover:text-white transition-colors">
+                  info@ghanatravel.com
+                </a>
+              </p>
+            </address>
           </div>
         </div>
-      </footer>
-    </div>
+
+        <div className="border-t border-slate-700 mt-12 pt-8 text-center text-slate-400">
+          <p>© {new Date().getFullYear()} GhanaTravel. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    
   )
 }
 
