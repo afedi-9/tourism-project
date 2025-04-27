@@ -3,6 +3,8 @@ import DestinationCard from "../../Components/DestinationCard";
 import { Filter, MapPin, Search } from "lucide-react";
 import { Tabs, TabsList, TabsContent, TabsTrigger } from "@radix-ui/react-tabs";
 import Footer from "../../Components/Footer";
+import aburiBImage from "../../assets/images/aburiB.png";
+
 
 const Dextinations = () => {
   const destinations = [
@@ -90,7 +92,7 @@ const Dextinations = () => {
       id: "aburi",
       name: "Aburi Botanical Gardens",
       location: "Eastern Region",
-      image: "/placeholder.svg?height=300&width=400",
+      image: aburiBImage,
       description:
         "Historic botanical gardens established in 1890, offering a peaceful retreat with diverse plant species and walking trails.",
       tags: ["Nature", "Historical", "Gardens"],
@@ -103,11 +105,8 @@ const Dextinations = () => {
         <div className="min-h-screen flex flex-col">
           {/* Hero Section */}
           <div
-            className="relative h-[50vh] bg-cover bg-center"
-            style={{
-              backgroundImage:
-                "url('https://images.unsplash.com/photo-1506744038136-46273834b3fb')",
-            }}
+            className="relative h-[50vh] bg-cover bg-center bg-[url('assets/images/cape.png')]"
+           
           >
             <div className="absolute inset-0 bg-black/40" />
             <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">

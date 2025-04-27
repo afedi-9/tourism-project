@@ -7,6 +7,7 @@ import AttractionCard from "../../Components/AttractionCard";
 
 import Footer from "../../Components/Footer";
 import HeroSliderCard from "../../Components/HeroSliderCard";
+import { Link } from "react-router";
 
 const Landing = () => {
   const [startDate, setStartDate] = useState(null);
@@ -205,12 +206,18 @@ const Landing = () => {
               of Ghana.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to={"/tours"}>
               <button className="bg-white text-teal-500 hover:bg-white/90 px-6 py-3 rounded-md font-medium">
                 Plan Your Trip
               </button>
+              </Link>
+              
+              <Link to={"/contact"}>
+
               <button className="text-white border border-white hover:bg-white/10 px-6 py-3 rounded-md font-medium">
                 Contact Us
               </button>
+              </Link>
             </div>
           </div>
         </section>

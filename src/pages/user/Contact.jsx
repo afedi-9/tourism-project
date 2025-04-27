@@ -4,6 +4,7 @@ import { ChevronDown, Clock, Clock1, Facebook, Instagram, Linkedin, Mail, MailIc
 import React, { useState } from 'react'
 import Footer from '../../Components/Footer'
 import { Link } from 'react-router'
+import FQACard from '../../Components/FQACard'
 
 const Contact = () => {
     const [formSubmitted, setFormSubmitted] = useState(false)
@@ -210,75 +211,7 @@ const Contact = () => {
       </div>
 
       {/* FAQ Section */}
-      <section className="bg-white py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
-
-          <div className="max-w-3xl mx-auto">
-            {/* Custom FAQ Items without Accordion component */}
-            <div className="divide-y divide-gray-200">
-              <div className="py-4">
-                <div className="flex justify-between items-center cursor-pointer">
-                  <h3 className="text-lg font-medium">How do I book a tour?</h3>
-                  <ChevronDown className="h-5 w-5 text-gray-500" />
-                </div>
-                <div className="mt-2 text-gray-600">
-                  <p>You can book a tour directly through our website by selecting your desired tour, choosing your
-                  preferred date, and completing the checkout process. Alternatively, you can contact our customer
-                  service team for assistance.</p>
-                </div>
-              </div>
-
-              <div className="py-4">
-                <div className="flex justify-between items-center cursor-pointer">
-                  <h3 className="text-lg font-medium">What is your cancellation policy?</h3>
-                  <ChevronDown className="h-5 w-5 text-gray-500" />
-                </div>
-                <div className="mt-2 text-gray-600">
-                  <p>Most tours can be canceled up to 24 hours before the start date for a full refund. Some tours with
-                  special arrangements may have different policies, which will be clearly indicated on the tour details
-                  page.</p>
-                </div>
-              </div>
-
-              <div className="py-4">
-                <div className="flex justify-between items-center cursor-pointer">
-                  <h3 className="text-lg font-medium">Do you offer custom or private tours?</h3>
-                  <ChevronDown className="h-5 w-5 text-gray-500" />
-                </div>
-                <div className="mt-2 text-gray-600">
-                  <p>Yes, we specialize in creating custom itineraries tailored to your interests, timeframe, and budget.
-                  Contact us with your requirements, and our team will design a personalized experience for you.</p>
-                </div>
-              </div>
-
-              <div className="py-4">
-                <div className="flex justify-between items-center cursor-pointer">
-                  <h3 className="text-lg font-medium">What should I pack for my trip to Ghana?</h3>
-                  <ChevronDown className="h-5 w-5 text-gray-500" />
-                </div>
-                <div className="mt-2 text-gray-600">
-                  <p>We recommend bringing lightweight, breathable clothing, comfortable walking shoes, sunscreen, insect
-                  repellent, a hat, and a reusable water bottle. For specific tours, additional items may be
-                  recommended, which will be communicated to you after booking.</p>
-                </div>
-              </div>
-
-              <div className="py-4">
-                <div className="flex justify-between items-center cursor-pointer">
-                  <h3 className="text-lg font-medium">Do I need a visa to visit Ghana?</h3>
-                  <ChevronDown className="h-5 w-5 text-gray-500" />
-                </div>
-                <div className="mt-2 text-gray-600">
-                  <p>Most visitors to Ghana require a visa. We recommend checking with the Ghanaian embassy or consulate in
-                  your country for the most up-to-date requirements. We can provide supporting documentation for your
-                  visa application if needed.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FQACard/>
 
       {/* Call to Action */}
       <section className="bg-teal-600 py-12 text-white">
