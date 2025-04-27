@@ -8,7 +8,7 @@ const TourCard = ({ ad }) => {
         <div className="bg-white rounded-lg shadow-sm overflow-hidden flex flex-col md:flex-row">
           <div className="md:w-1/3">
             <img
-              src="https://images.unsplash.com/photo-1506744038136-46273834b3fb"
+              src={`${ad.image}`}
               alt="Tour"
               className="h-full w-full object-cover"
             />

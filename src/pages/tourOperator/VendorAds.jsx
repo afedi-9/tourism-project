@@ -8,7 +8,9 @@ const VendorAds = () => {
   const getAds = async () => {
     try {
       const response = await apiGetOperatorToursAds();
+      console.log(response.data);
       setAds(response.data);
+      con
     } catch (error) {
       console.log(error);
     }
@@ -21,8 +23,8 @@ const VendorAds = () => {
   return (
     <div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-4">
-        {ads.map((ad) => {
-          return <VendorAdsCard key={ad._id} ad={ad} />;
+      {ads.map((ad) => {
+          return <VendorAdsCard key={ad.id} ad={ad} />;
         })}
       </div>
     </div>

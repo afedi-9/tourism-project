@@ -6,8 +6,8 @@ const VendorAdsCard = ({ad}) => {
   <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
     <div className="relative">
       <img
-        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb"
-        alt="Tour"
+        src={`${ad.image}`}
+        alt={"Tour Image"}
         className="w-full h-56 object-cover"
       />
       <button className="absolute top-2 right-2 bg-white rounded-full p-2 shadow-md">
