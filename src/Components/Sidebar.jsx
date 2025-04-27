@@ -80,7 +80,7 @@ const Sidebar = () => {
           </div>
 
           {/* Logout Button */}
-          <button className="mt-auto bg-red-600 hover:bg-red-700 text-white px-4 py-3 rounded-md transition-colors flex items-center justify-center">
+          <button className="mt-auto bg-[#009689] hover:bg-[#00786F] text-white px-4 py-3 rounded-md transition-colors flex items-center justify-center">
             Logout
           </button>
         </div>

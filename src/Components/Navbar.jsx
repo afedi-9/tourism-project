@@ -18,12 +18,17 @@ export default function Navbar() {
     setShowSignupOptions(false);
   };
 
+  // Helper function to close the menu
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="bg-white/95 backdrop-blur-sm sticky top-0 z-50 border-b">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center gap-2">
+            <Link to="/" className="flex items-center gap-2" onClick={closeMenu}>
               <WanderNestLogoCard className="h-8 w-8" />
               <span className="text-xl font-bold text-slate-700">
                 Wander<span className="text-teal-500">Nest</span>
@@ -114,31 +119,31 @@ export default function Navbar() {
       {isMenuOpen && (
         <div className="md:hidden py-4 px-4 bg-white border-t">
           <nav className="flex flex-col space-y-4">
-            <Link to="/" className="text-sm font-medium hover:text-teal-500 transition-colors">
+            <Link to="/" className="text-sm font-medium hover:text-teal-500 transition-colors" onClick={closeMenu}>
               Home
             </Link>
-            <Link to="/destinations" className="text-sm font-medium hover:text-teal-500 transition-colors">
+            <Link to="/destinations" className="text-sm font-medium hover:text-teal-500 transition-colors" onClick={closeMenu}>
               Destinations
             </Link>
-            <Link to="/tours" className="text-sm font-medium hover:text-teal-500 transition-colors">
+            <Link to="/tours" className="text-sm font-medium hover:text-teal-500 transition-colors" onClick={closeMenu}>
               Experiences
             </Link>
-            <Link to="/about" className="text-sm font-medium hover:text-teal-500 transition-colors">
+            <Link to="/about" className="text-sm font-medium hover:text-teal-500 transition-colors" onClick={closeMenu}>
               About 
             </Link>
-            <Link to="/travel-guide" className="text-sm font-medium hover:text-teal-500 transition-colors">
+            <Link to="/travel-guide" className="text-sm font-medium hover:text-teal-500 transition-colors" onClick={closeMenu}>
               Travel Guide
             </Link>
-            <Link to="/contact" className="text-sm font-medium hover:text-teal-500 transition-colors">
+            <Link to="/contact" className="text-sm font-medium hover:text-teal-500 transition-colors" onClick={closeMenu}>
               Contact
             </Link>
 
             <div className="pt-4">
               <h4 className="text-xs font-semibold text-gray-500 mb-2">LOGIN AS</h4>
-              <Link to="/login" className="block py-2 px-2 text-sm hover:bg-gray-100 rounded text-blue-600">
+              <Link to="/login" className="block py-2 px-2 text-sm hover:bg-gray-100 rounded text-blue-600" onClick={closeMenu}>
                 Tourist
               </Link>
-              <Link to="/operatour-login" className="block py-2 px-2 text-sm hover:bg-gray-100 rounded text-green-600">
+              <Link to="/operatour-login" className="block py-2 px-2 text-sm hover:bg-gray-100 rounded text-green-600" onClick={closeMenu}>
                 Tour Operator
               </Link>
               <span className="block py-2 px-2 text-sm hover:bg-gray-100 rounded text-purple-600 opacity-50">
@@ -148,10 +153,10 @@ export default function Navbar() {
 
             <div className="pt-4">
               <h4 className="text-xs font-semibold text-gray-500 mb-2">SIGN UP AS</h4>
-              <Link to="/signup" className="block py-2 px-2 text-sm hover:bg-gray-100 rounded text-blue-600">
+              <Link to="/signup" className="block py-2 px-2 text-sm hover:bg-gray-100 rounded text-blue-600" onClick={closeMenu}>
                 Tourist
               </Link>
-              <Link to="/operatour-signup" className="block py-2 px-2 text-sm hover:bg-gray-100 rounded text-green-600">
+              <Link to="/operatour-signup" className="block py-2 px-2 text-sm hover:bg-gray-100 rounded text-green-600" onClick={closeMenu}>
                 Tour Operator
               </Link>
               <span className="block py-2 px-2 text-sm hover:bg-gray-100 rounded text-purple-600 opacity-50">
