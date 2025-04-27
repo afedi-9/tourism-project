@@ -2,7 +2,7 @@ import { Heart, MapIcon, MapPin, Star } from "lucide-react";
 import React from "react";
 import { Link } from "react-router";
 
-const RecentlyviewedCard = () => {
+const RecentlyviewedCard = ({ad}) => {
   return (
   
     <div>

@@ -29,10 +29,8 @@ const Tours = () => {
         <div className="min-h-screen flex flex-col">
           {/* Hero Section */}
           <div
-            className="relative h-[50vh] bg-cover bg-center"
-            style={{
-              backgroundImage: "url('https://images.unsplash.com/photo-1506744038136-46273834b3fb')",
-            }}
+            className="relative h-[50vh] bg-cover bg-center bg-[url('assets/images/akosom.png')]"
+          
           >
             <div className="absolute inset-0 bg-black/40"></div>
             <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
