@@ -10,6 +10,8 @@ import {
 import React from "react";
 import TestimoniyCard from "../../Components/TestimoniyCard";
 import Footer from "../../Components/Footer";
+import myBossImage from "../../assets/images/myBoss.jpg"
+import myImage  from "../../assets/images/michael.jpg"
 
 
 const About = () => {
@@ -17,11 +19,8 @@ const About = () => {
     <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
       <div
-        className="relative h-[50vh] bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1506744038136-46273834b3fb')",
-        }}
+        className="relative h-[50vh] bg-cover bg-center bg-[url('assets/images/monkey.png')]"
+        
       >
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
@@ -105,81 +104,75 @@ const About = () => {
           Meet the Team
         </h2>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
-            <div class="h-60 bg-gray-200">
-              <img
-                src="/api/placeholder/300/300"
-                alt="Kwame Mensah"
-                class="w-full h-full object-cover"
-              />
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-800">Kwame Mensah</h3>
-              <p class="text-green-600 font-medium mb-3">Founder & CEO</p>
-              <p class="text-gray-600">
-                With 15+ years in tourism, Kwame founded TravelGhana to showcase
-                his country's beauty to the world.
-              </p>
-            </div>
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+  {/* Kwame Mensah */}
+  <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+   <img
+    src={myBossImage}
+    alt="Kwame Mensah"
+    className="w-full object-cover rounded-t-lg"
+  />
+  <div className="p-4">
+    <h3 className="text-xl font-bold text-gray-800">Kwame Mensah</h3>
+    <p className="text-green-600 font-medium mb-3">Founder & CEO</p>
+    <p className="text-gray-600">
+      With 15+ years in tourism, Kwame founded TravelGhana to showcase
+      his country's beauty to the world.
+    </p>
+  </div>
+</div>
 
-          <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
-            <div class="h-60 bg-gray-200">
-              <img
-                src="/api/placeholder/300/300"
-                alt="Ama Darko"
-                class="w-full h-full object-cover"
-              />
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-800">Ama Darko</h3>
-              <p class="text-green-600 font-medium mb-3">Head of Operations</p>
-              <p class="text-gray-600">
-                Ama ensures all tours run smoothly and exceed expectations with
-                her attention to detail.
-              </p>
-            </div>
-          </div>
+<div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+   <img
+    src={myBossImage}
+    alt="Kwame Mensah"
+    className="w-full object-cover rounded-t-lg"
+  />
+  <div className="p-4">
+    <h3 className="text-xl font-bold text-gray-800">Kwame Mensah</h3>
+    <p className="text-green-600 font-medium mb-3">Founder & CEO</p>
+    <p className="text-gray-600">
+      With 15+ years in tourism, Kwame founded TravelGhana to showcase
+      his country's beauty to the world.
+    </p>
+  </div>
+</div>
+<div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+   <img
+    src={myBossImage}
+    alt="Kwame Mensah"
+    className="w-full object-cover rounded-t-lg"
+  />
+  <div className="p-4">
+    <h3 className="text-xl font-bold text-gray-800">Kwame Mensah</h3>
+    <p className="text-green-600 font-medium mb-3">Founder & CEO</p>
+    <p className="text-gray-600">
+      With 15+ years in tourism, Kwame founded TravelGhana to showcase
+      his country's beauty to the world.
+    </p>
+  </div>
+</div>
 
-          <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
-            <div class="h-60 bg-gray-200">
-              <img
-                src="/api/placeholder/300/300"
-                alt="Kojo Boateng"
-                class="w-full h-full object-cover"
-              />
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-800">Kojo Boateng</h3>
-              <p class="text-green-600 font-medium mb-3">Lead Tour Guide</p>
-              <p class="text-gray-600">
-                Kojo brings Ghana to life with his deep knowledge and engaging
-                storytelling.
-              </p>
-            </div>
-          </div>
 
-          <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
-            <div class="h-60 bg-gray-200">
-              <img
-                src=""
-                alt="Efua Asare"
-                class="w-full h-full object-cover"
-              />
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-800">Efua Asare</h3>
-              <p class="text-green-600 font-medium mb-3">
-                Customer Experience Manager
-              </p>
-              <p class="text-gray-600">
-                Efua ensures our guests have seamless, memorable journeys from
-                start to finish.
-              </p>
-            </div>
-          </div>
-        </div>
+  {/* Ama Darko */}
+  <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+  <img
+    src={myImage}
+    alt="Kwame Mensah"
+    className="w-full object-cover rounded-t-lg"
+  />
+  <div className="p-4">
+    <h3 className="text-xl font-bold text-gray-800">Kwame Mensah</h3>
+    <p className="text-green-600 font-medium mb-3">Founder & CEO</p>
+    <p className="text-gray-600">
+      With 15+ years in tourism, Kwame founded TravelGhana to showcase
+      his country's beauty to the world.
+    </p>
+  </div>
+</div>
+
+</div>
+
       </div>
 
       <section className="py-16 bg-teal-600 text-white">
