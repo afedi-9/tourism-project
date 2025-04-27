@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react'; // or any icon lib you're using
 import kakumImage from "../assets/images/kakum.png";
-import kwameImage from "../assets/images/kwameNkruma.png"
+import kwameImage from "../assets/images/kwame.png"
 import moleImage from "../assets/images/mole.png"
 import aburiImage from "../assets/images/aburi.png"
+import fiaImage from "../assets/images/fia.png"
 
 
 
@@ -18,7 +19,7 @@ const HeroSliderCard = () => {
           subtext: "Plan better with 300,000+ travel experiences.",
         },
         {
-          image: kwameImage,
+          image: fiaImage,
           title: "Experience Cape Coast",
           description:
             "Visit historic castles, pristine beaches, and immerse yourself in the vibrant coastal culture.",

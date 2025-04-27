@@ -45,7 +45,7 @@ export default function Navbar() {
               Destinations
             </Link>
             <Link to="/tours" className="text-sm font-medium hover:text-teal-500 transition-colors">
-              Experiences
+              Tours
             </Link>
             <Link to="/about" className="text-sm font-medium hover:text-teal-500 transition-colors">
               About 
@@ -126,7 +126,7 @@ export default function Navbar() {
               Destinations
             </Link>
             <Link to="/tours" className="text-sm font-medium hover:text-teal-500 transition-colors" onClick={closeMenu}>
-              Experiences
+              Tours
             </Link>
             <Link to="/about" className="text-sm font-medium hover:text-teal-500 transition-colors" onClick={closeMenu}>
               About 
